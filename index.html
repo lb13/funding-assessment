@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        label {
+            display: block;
+            border-bottom: 1px solid #000000;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        .help-text {
+            background-color: aquamarine;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>Funding Lookup v0.1</h1>
+
+    <div id="container" class="row">
+        <div id="learner-data-collection" class="column">
+            <fieldset>
+                <legend>
+                    Learner details
+                </legend>
+
+                <label>
+                    How old are you?
+                    <p class="help-text">We need to know your age on the day you plan to start your course.</p>
+                    <input class="learner-input" type="number" step="1" id="age"/>
+                </label>
+
+                <label>
+                EHCP
+                <p class="help-text">Do you have an Education, Health & Care Plan? This would normally be set up while you are at school.</p>
+                    <select class="learner-input" id=hasEHCP>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+                
+                <label>
+                Achieved GCSE English Grade C/4
+                    <select class="learner-input" id=achievedEnglishGrade4>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+                
+                <label>
+                Achieved GCSE Maths Grade C/4
+                    <select class="learner-input" id=achievedMathsGrade4>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Digital skills assessed at below level 1
+                    <select class="learner-input" id=digitalSkillsBelowLevel1>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Level 2 qualification using WECA level 2 retraining offer
+                    <select class="learner-input" id=spentWECAL2RetrainingOffer>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Level 3 qualification using WECA level 3 retraining offer
+                    <select class="learner-input" id=spentWECAL3RetrainingOffer>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Qualified at level 4 or above
+                    <select class="learner-input" id=achievedLevel4Plus>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 2 Qualification
+                    <select class="learner-input" id=achievedFullLevel2>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 3 Qualification
+                    <select class="learner-input" id=achievedFullLevel3>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Short FCFJ Qualification
+                    <select class="learner-input" id=achievedShortFCFJ>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Full FCFJ Qualification
+                    <select class="learner-input" id=achievedFullFCFJ>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Full FCFJ Qualification Achieved Prior to 2021-04-01
+                    <select class="learner-input" id=achievedFullFCFJPriorToApril2021>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Achieved Legal Entitlement Level 3 Qualification Prior to 2021-04-01
+                    <select class="learner-input" id=achievedFullLevel3PriorToApril2021>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Meets Unemployed Definition
+                    <select class="learner-input" id=meetsUnemployedDefinition>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Employed
+                    <select class="learner-input" id=isEmployed>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Low Wage
+                    <select class="learner-input" id=isLowWage>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+
+                <label>
+                Is Receiving Benefits
+                    <select class="learner-input" id=isReceivingBenefits>
+                        <option value=></option>
+                        <option value=Yes>Yes</option>
+                        <option value=No>No</option>
+                    </select>
+                </label>
+                    
+            </fieldset>
+        </div>
+
+        <div id="results" class="column"></div>
+    </div>
+
+    <script>
+        const learner = {"objectName":"learner"};
+        const results = document.getElementById("results");
+        const request = new Request("/scenarios.json");
+        
+        document.querySelectorAll('.learner-input').forEach(item => {
+            item.addEventListener('change', event => {
+                let property = item.id; // input id is used as the property name for the learner
+                let value = item.value; // input value is used as the property value for the learner
+                learner[property] = value; // adds the new property as a key:value pair
+                console.log(learner); // report learner object in console with all new additions
+
+                fetch(request)
+                    .then(response => response.json())
+                    .then(data => {
+                        let scenarios = data;
+                        let filteredScenarios = scenarios;
+                        results.innerHTML = "";
+
+                        filteredScenarios.forEach(function(scenario) {
+                            scenario.score = 0;
+                            scenario.targetScore = scenario.conditions.length + 2;
+
+                            if (learner.age >= scenario.minAge) {
+                                scenario.score += 1;
+                            };
+
+                            if (learner.age <= scenario.maxAge) {
+                                scenario.score += 1;
+                            };
+
+                            scenario.conditions.forEach(function(condition) {
+                                let cn = condition.conditionName; // e.g. hasEHCP
+                                let cv = condition.conditionValue; // e.g. Yes
+
+                                if (cv == learner[cn]) {
+                                    //console.log('Meets criteria ' + cn);
+                                    scenario.score += 1;
+                                } else {
+                                    //console.log('Does not meet criteria ' + cn);
+                                }
+
+                            })
+
+                            
+                        });
+
+                        filteredScenarios = filteredScenarios.filter(function(scenario){
+                            return scenario.score == scenario.targetScore;
+                        });
+
+                        filteredScenarios.sort(function(a, b) {
+                            const titleA = a.name.toUpperCase(); // ignore upper and lowercase
+                            const titleB = b.name.toUpperCase(); // ignore upper and lowercase
+                            if (titleA < titleB) {
+                                return -1;
+                            }
+                            if (titleA > titleB) {
+                                return 1;
+                            }
+                            // titles must be equal
+                            return 0;
+                        });
+
+                        filteredScenarios.sort(function(a, b) {
+                            return a.ffi - b.ffi;
+                        });
+
+                        console.log('------------------------');
+
+                        filteredScenarios.forEach(function(scenario) {
+                            console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
+
+                            results.insertAdjacentHTML("beforeend","<div style=\"border: 1px dotted black; padding: 5px; margin: 5px\"><h1>"+scenario.name+"</h1><p>Congrats, you can use this funding option.</p></div>");
+                        })
+                    })
+                })
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+
+<!--
+    For every data input that is received, the person / learner object needs to be updated in full.
+    Once the learner has been updated, we then need to loop through each of the funding scenarios to see if it is compatible.
+    Two fixed tests that are done based on the age (min vs max) and then a loop over the remaining criteria, with each
+    successful test of the criteria adding a point to a score variable, end product of which is a score of n which can then
+    be compared to a max score or target score of N.
+    Then, a filter can be applied to the array of scenarios, to only return those where score = target (n = N).
+    But how to actually display?
+    Well, I guess we then loop over the filtered array and build out some HTML results, just like we do in the elbi-search.
+-->
