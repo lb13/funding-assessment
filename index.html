@@ -27,7 +27,6 @@
             float: left;
             width: 50%;
             padding: 10px;
-            height: 300px; /* Should be removed. Only for demonstration */
         }
 
         /* Clear floats after the columns */
@@ -287,7 +286,9 @@
                         filteredScenarios.forEach(function(scenario) {
                             console.log(scenario.name + ': ' + scenario.score + ' out of '+ scenario.targetScore);
 
-                            results.insertAdjacentHTML("beforeend","<div style=\"border: 1px dotted black; padding: 5px; margin: 5px\"><h1>"+scenario.name+"</h1><p>Congrats, you can use this funding option.</p></div>");
+                            let resultsHTML = "<div style=\"border: 1px dotted black; padding: 5px; margin: 5px\"><h1>"+scenario.name+"</h1><p>Congrats, you can use this funding option.</p></div>";
+
+                            results.insertAdjacentHTML("beforeend",resultsHTML);
                         })
                     })
                 })
@@ -297,16 +298,3 @@
 </body>
 
 </html>
-
-
-
-<!--
-    For every data input that is received, the person / learner object needs to be updated in full.
-    Once the learner has been updated, we then need to loop through each of the funding scenarios to see if it is compatible.
-    Two fixed tests that are done based on the age (min vs max) and then a loop over the remaining criteria, with each
-    successful test of the criteria adding a point to a score variable, end product of which is a score of n which can then
-    be compared to a max score or target score of N.
-    Then, a filter can be applied to the array of scenarios, to only return those where score = target (n = N).
-    But how to actually display?
-    Well, I guess we then loop over the filtered array and build out some HTML results, just like we do in the elbi-search.
--->
