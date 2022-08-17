@@ -313,10 +313,6 @@
             {
                 "conditionName":"meetsUnemployedDefinition",
                 "conditionValue":"Yes"
-            },
-            {
-                "conditionName":"isReceivingBenefits",
-                "conditionValue":"Yes"
             }
         ]
     },
@@ -336,10 +332,6 @@
             },
             {
                 "conditionName":"meetsUnemployedDefinition",
-                "conditionValue":"Yes"
-            },
-            {
-                "conditionName":"isReceivingBenefits",
                 "conditionValue":"Yes"
             }
         ]
@@ -400,10 +392,6 @@
             },
             {
                 "conditionName":"meetsUnemployedDefinition",
-                "conditionValue":"Yes"
-            },
-            {
-                "conditionName":"isReceivingBenefits",
                 "conditionValue":"Yes"
             }
         ]
